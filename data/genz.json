@@ -1,0 +1,268 @@
+[
+    {
+        "doc": "Gen Z in Austria, Belgium, and Italy (2016) are presented with trade union membership as a relevant and normalized life choice, indicating that collective labor representation remains a measurable behavior for this generation. The inclusion of both current and past membership options suggests that union engagement is viewed as a dynamic rather than static commitment, reflecting a pragmatic attitude toward institutional participation rather than lifelong affiliation.",
+        "metadata": [
+            "genz",
+            "labor_attitudes",
+            "union_engagement",
+            "institutional_pragmatism",
+            "Austria",
+            "Belgium",
+            "Italy",
+            "2016_context",
+            "post_2008_crisis"
+        ]
+    },
+    {
+        "doc": "Gen Z in Belgium, Ireland, and Russia (2016) are asked to self-identify with religious denominations using a binary (yes/no) framework, implying that religious affiliation is treated as a discrete, optional identity rather than an assumed social norm. This framing suggests a generational shift toward secularization or individualized spirituality, where institutional religious belonging is no longer a default expectation, particularly in historically Catholic or Orthodox contexts.",
+        "metadata": [
+            "genz",
+            "religious_identity",
+            "secularization_trends",
+            "individualized_spirituality",
+            "Belgium",
+            "Ireland",
+            "Russia",
+            "2016_context",
+            "intergenerational_shift"
+        ]
+    },
+    {
+        "doc": "Gen Z in Germany and Russia (2016) are measured on their participation in work-related upskilling (courses, lectures, conferences) within a 12-month window, indicating that continuous learning is normalized as a short-term, actionable behavior rather than a long-term educational commitment. The binary (yes/no) response option suggests that such activities are treated as a standard professional practice, reflecting a generation that views skill development as iterative and necessary for labor market adaptability.",
+        "metadata": [
+            "genz",
+            "continuous_learning",
+            "labor_market_adaptability",
+            "upskilling_behavior",
+            "Germany",
+            "Russia",
+            "2016_context",
+            "post_industrial_economy"
+        ]
+    },
+    {
+        "doc": "Gen Z in Russia (2016) are presented with a graduated scale for immigration attitudes (from 'allow many' to 'allow none'), revealing that migration is a salient and polarizing socio-political issue for this cohort. The explicit framing of 'poorer countries outside Europe' as a reference point suggests that economic disparity and geopolitical boundaries are central to how this generation conceptualizes immigration, reflecting a context where global inequality and national identity intersect in public discourse.",
+        "metadata": [
+            "genz",
+            "immigration_attitudes",
+            "economic_disparity_awareness",
+            "national_identity",
+            "Russia",
+            "2016_context",
+            "post_Soviet_influence",
+            "globalization_skepticism"
+        ]
+    },
+    {
+        "doc": "Gen Z in Germany (2016) exhibit near-universal internet usage as a baseline behavior, with response options ranging from 'never' to 'every day' but implicitly treating daily use as the norm. The question’s inclusion of multiple devices (computers, tablets, smartphones) and both work/personal contexts indicates that digital integration is assumed to be seamless and multifunctional for this generation, reflecting a life where online and offline activities are indistinct and constant connectivity is standard.",
+        "metadata": [
+            "genz",
+            "digital_behavior",
+            "connectivity_norm",
+            "multidevice_usage",
+            "work_personal_blurring",
+            "Germany",
+            "2016_context",
+            "digital_native_era",
+            "technology_dependency"
+        ]
+    },
+    {
+        "doc": "Gen Z across Austria, Belgium, and Italy (2016) are measured for trade union membership using identical question framing, suggesting that collective labor representation is a cross-culturally relevant behavior for this generation in Western/Central Europe. The uniformity of the question implies that union engagement is neither regionally exceptional nor obsolete, but rather a persistent—though not dominant—feature of early-career labor relations in these economies.",
+        "metadata": [
+            "genz",
+            "labor_attitudes",
+            "union_engagement",
+            "cross_cultural_variation",
+            "Austria",
+            "Belgium",
+            "Italy",
+            "2016_context",
+            "European_labor_models",
+            "comparative_analysis"
+        ]
+    },
+    {
+        "doc": "Gen Z in Russia (2016) are asked about immigration policy using a quantitative scale ('many' to 'none'), which treats migration as a matter of measurable volume rather than qualitative integration. This framing suggests that for this cohort, immigration is primarily viewed through a lens of resource allocation and demographic control, reflecting a utilitarian and potentially zero-sum perspective on cross-border mobility in a post-Soviet economic context.",
+        "metadata": [
+            "genz",
+            "immigration_attitudes",
+            "resource_allocation_view",
+            "demographic_control",
+            "Russia",
+            "2016_context",
+            "utilitarian_perspective",
+            "post_Soviet_economy"
+        ]
+    },
+    {
+        "doc": "Gen Z in Germany (2016) are not asked *whether* they use the internet but *how frequently*, indicating that digital engagement is a normalized behavior requiring no justification. The absence of a 'not applicable' option further reinforces that non-use is statistically negligible, signaling a generation for whom digital literacy and access are baseline expectations rather than exceptional skills.",
+        "metadata": [
+            "genz",
+            "digital_behavior",
+            "digital_literacy_norm",
+            "access_expectation",
+            "Germany",
+            "2016_context",
+            "technology_normalization",
+            "digital_divide_closure"
+        ]
+    },
+    {
+        "doc": "Gen Z in Belgium and Ireland (2016) face a binary question on religious affiliation, which contrasts with historically dominant Catholic identities in these countries. The lack of denominational specificity (e.g., no 'Catholic/Protestant' breakdown) suggests that institutional religious labels are less socially salient for this generation, pointing to either secularization or a shift toward non-denominational spirituality.",
+        "metadata": [
+            "genz",
+            "religious_identity",
+            "Catholic_decline",
+            "secularization",
+            "non_denominational_trends",
+            "Belgium",
+            "Ireland",
+            "2016_context",
+            "historical_religious_shift"
+        ]
+    },
+    {
+        "doc": "Gen Z in Russia (2016) are measured on upskilling behaviors within a 12-month frame, identical to the German question, but the economic and educational contexts differ sharply. In Russia, this suggests that continuous learning is framed as a necessity for navigating a volatile post-Soviet labor market, where formal credentials may be less reliable than adaptable skills, reflecting a generation that prioritizes practical resilience over institutional trust.",
+        "metadata": [
+            "genz",
+            "continuous_learning",
+            "labor_market_volatility",
+            "practical_resilience",
+            "institutional_skepticism",
+            "Russia",
+            "2016_context",
+            "post_Soviet_labor_reality",
+            "cross_cultural_variation"
+        ]
+    },
+    {
+        "doc": "Gen Z in Italy (2016) demonstrates near-universal digital integration, with internet usage framed as a daily or near-daily expectation across devices (computers, tablets, smartphones). The normalization of 'every day' as a response option—without qualification—reflects a generation for whom constant connectivity is a baseline condition, not an exceptional behavior. This implies prioritization of digital accessibility in personal, educational, and professional spheres, with minimal distinction between device types or use cases.",
+        "metadata": [
+            "genz",
+            "digital_behavior",
+            "connectivity_norm",
+            "Italy",
+            "2016_context",
+            "digital_native_era",
+            "work_life_blurring"
+        ]
+    },
+    {
+        "doc": "Gen Z in Italy (2016) engages in consumer activism as a normalized form of civic participation, with boycotting products presented as a standard, measurable action for social or political change. The inclusion of this behavior in a survey of 'ways to improve things' suggests that economic leverage (via purchasing decisions) is a recognized and legitimized tool for this cohort, reflecting a pragmatic approach to activism that aligns with their role as digital-native consumers.",
+        "metadata": [
+            "genz",
+            "civic_engagement",
+            "consumer_activism",
+            "Italy",
+            "2016_context",
+            "economic_leverage",
+            "pragmatic_activism"
+        ]
+    },
+    {
+        "doc": "Gen Z in Russia (2016) is measured for boycott participation as a civic behavior, but the binary (yes/no) framing—without gradations of frequency or intensity—implies that such actions are either highly polarized or not yet fully normalized as a mainstream practice. This contrasts with Western European contexts (e.g., Italy) where the same question appears, suggesting that in Russia, consumer activism may still be an emergent or contested norm rather than an institutionalized one.",
+        "metadata": [
+            "genz",
+            "civic_engagement",
+            "consumer_activism",
+            "Russia",
+            "2016_context",
+            "emerging_norm",
+            "cross_cultural_variation",
+            "polarized_behavior"
+        ]
+    },
+    {
+        "doc": "Gen Z in Ireland (2016) treats petition-signing as a baseline civic action, with the behavior framed as a common and low-effort method of political expression. The binary (yes/no) response options indicate that signing petitions is either a routine part of civic life for this generation or so peripheral that it doesn’t warrant measurement of frequency—suggesting a culture where digital or low-commitment activism is normalized but may not deeply engage institutional power structures.",
+        "metadata": [
+            "genz",
+            "civic_engagement",
+            "low_effort_activism",
+            "Ireland",
+            "2016_context",
+            "digital_activism",
+            "institutional_skepticism"
+        ]
+    },
+    {
+        "doc": "Gen Z in Germany (2016) views participation in organizations or associations as a relevant but not universal civic behavior, with the survey measuring whether they have engaged in such activities at all in the past year. The lack of frequency options (e.g., 'regularly') implies that formal organizational involvement is not yet a dominant norm for this cohort, reflecting either a preference for informal networks or a generational shift away from traditional institutional membership models.",
+        "metadata": [
+            "genz",
+            "civic_engagement",
+            "organizational_participation",
+            "Germany",
+            "2016_context",
+            "informal_networks",
+            "institutional_disengagement"
+        ]
+    },
+    {
+        "doc": "Gen Z in Austria (2018) exhibits strong normalization of cohabitation without marriage, with the behavior presented on a spectrum from 'strongly disapprove' to 'strongly approve.' The inclusion of neutral and positive options as default choices—rather than framing cohabitation as deviant—signals that this generation treats non-marital partnerships as a legitimate and morally acceptable lifestyle choice, reflecting broader European trends toward relationship autonomy and the decoupling of legal status from social recognition.",
+        "metadata": [
+            "genz",
+            "relationship_norms",
+            "cohabitation_patterns",
+            "Austria",
+            "2018_context",
+            "institutional_flexibility",
+            "autonomy",
+            "post_traditional_family"
+        ]
+    },
+    {
+        "doc": "Gen Z in Germany (2016) demonstrates overwhelming support for LGBTQ+ adoption rights, with the survey framing equal adoption access for gay and lesbian couples as a mainstream position worthy of strong agreement. The absence of conditional or intermediate options (e.g., 'only in certain cases') suggests that for this cohort, LGBTQ+ parental rights are treated as a settled issue of equality rather than a debatable social experiment, reflecting a post-marriage-equality normative landscape.",
+        "metadata": [
+            "genz",
+            "lgbtq_normative_support",
+            "family_structures",
+            "Germany",
+            "2016_context",
+            "equality_as_baseline",
+            "post_traditional_values",
+            "institutional_inclusion"
+        ]
+    },
+    {
+        "doc": "Gen Z in Belgium and Ireland (2016) rejects shame associated with LGBTQ+ family members, with the survey measuring disagreement with the statement 'I would feel ashamed' as the dominant expected response. The framing of shame as a position to be actively disavowed—rather than neutrality—indicates that for this generation, LGBTQ+ identity is not only tolerated but affirmatively integrated into familial and social acceptance norms, marking a shift from passive tolerance to active allyship.",
+        "metadata": [
+            "genz",
+            "lgbtq_normative_support",
+            "familial_acceptance",
+            "Belgium",
+            "Ireland",
+            "2016_context",
+            "allyship_culture",
+            "post_stigma_society",
+            "cross_cultural_variation"
+        ]
+    },
+    {
+        "doc": "Gen Z in Belgium and Ireland (2016) treats LGBTQ+ autonomy ('live their own life as they wish') as a non-negotiable value, with the survey offering strong agreement as the primary expected response. The absence of qualifying language (e.g., 'as long as it doesn’t affect others') suggests that this generation views personal freedom in sexual and gender identity as an absolute right, not subject to communal or religious constraints, reflecting a broader cultural prioritization of individual self-determination over collective moral frameworks.",
+        "metadata": [
+            "genz",
+            "lgbtq_normative_support",
+            "autonomy",
+            "individualism",
+            "Belgium",
+            "Ireland",
+            "2016_context",
+            "post_religious_morality",
+            "self_determination"
+        ]
+    },
+    {
+        "doc": "Across multiple European countries (Belgium, Ireland, Germany, Austria) in 2016–2018, Gen Z’s civic and social behaviors are measured through a lens of institutional flexibility, where traditional norms (marriage, family structures, activism methods) are presented as optional rather than mandatory. The consistent inclusion of neutral or positive response options for non-traditional behaviors (cohabitation, LGBTQ+ rights, consumer activism) indicates a generational cohort that operates within a pluralistic normative framework, where adherence to legacy institutions is no longer a default expectation.",
+        "metadata": [
+            "genz",
+            "institutional_flexibility",
+            "normative_pluralism",
+            "Europe",
+            "2016_context",
+            "2018_context",
+            "post_traditional_society",
+            "generational_shift",
+            "cross_cultural_variation"
+        ]
+    }
+]
