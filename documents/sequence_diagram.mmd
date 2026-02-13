@@ -1,0 +1,60 @@
+sequenceDiagram
+    actor User
+    participant Main
+    participant DB as GenzeloVectorDB
+    participant Graph as LangGraph (Workflow)
+    participant HR as HR Agent
+    participant Tools as Tools Node
+    participant Emp as Employee Agent
+
+    User->>Main: Run main.py
+    activate Main
+    Main->>DB: Initialize & Warmup
+    activate DB
+    DB-->>Main: Ready
+    deactivate DB
+    
+    Main->>Main: Select Profile (Luigi/Francesca)
+    
+    Main->>Graph: build_graph(db_client)
+    Main->>Graph: stream(initial_state)
+    activate Graph
+    
+    loop Conversation Cycle
+        Graph->>HR: Invoke (state)
+        activate HR
+        HR-->>Graph: Message (Text or Tool Call)
+        deactivate HR
+        
+        alt Tool Call (e.g., RAG or Save Info)
+            Graph->>Tools: Execute Tool
+            activate Tools
+            alt RAG Tool
+                Tools->>DB: Search(query)
+                DB-->>Tools: Results
+            else Save Info Tool
+                Tools->>Main: Write Profile to Disk
+            end
+            Tools-->>Graph: Tool Output
+            deactivate Tools
+            
+            Graph->>HR: Re-invoke (with Tool Output)
+            activate HR
+            HR-->>Graph: Final Answer (Text)
+            deactivate HR
+        end
+        
+        Graph->>Emp: Invoke (state)
+        activate Emp
+        Emp-->>Graph: Response (Text)
+        deactivate Emp
+        
+        opt Check Termination
+            Graph->>Graph: should_continue?
+        end
+    end
+    
+    Graph-->>Main: End Simulation
+    deactivate Graph
+    Main-->>User: Finished
+    deactivate Main

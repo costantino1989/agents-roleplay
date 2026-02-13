@@ -1,0 +1,29 @@
+graph TD
+    %% Define Nodes
+    START((Start))
+    END((End))
+    
+    HR[HR Agent Node]
+    EMP[Employee Agent Node]
+    TOOLS[Tools Node]
+
+    %% Styles
+    style HR fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    style EMP fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style TOOLS fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    style START fill:#f3e5f5,stroke:#4a148c
+    style END fill:#f3e5f5,stroke:#4a148c
+
+    %% Graph Connections
+    START --> HR
+
+    %% HR Conditional Edges
+    HR -->|Condition: Has Tool Calls| TOOLS
+    HR -->|Condition: Text Message| EMP
+    
+    %% Tools Edge
+    TOOLS --> HR
+
+    %% Employee Conditional Edges
+    EMP -->|Condition: Default| HR
+    EMP -->|Condition: Text contains 'grazie e arrivederci'| END
