@@ -1,8 +1,15 @@
+import os
+
+# Set global Opik project name before imports to ensure it's picked up by all modules
+os.environ["OPIK_PROJECT_NAME"] = "agents-roleplay"
+
 import random
 import sys
 import argparse
 import questionary
 
+from agents.employee_agent import employee_agent_instance
+from agents.hr_agent import hr_agent_instance
 from graph import build_graph
 from utils.llm_client import Message
 from utils.logger import get_logger
@@ -144,6 +151,11 @@ def main():
 
     logger.info("--- Simulation Completed ---")
     logger.info(f"Profile saved to '{profile_filename}'")
+
+    # Graceful shutdown of agents to ensure metrics are calculated
+    logger.info("Waiting for background metrics calculations...")
+    hr_agent_instance.shutdown()
+    employee_agent_instance.shutdown()
 
 
 if __name__ == "__main__":

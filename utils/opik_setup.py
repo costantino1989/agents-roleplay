@@ -16,6 +16,9 @@ def configure_opik(project_name="agents-roleplay"):
     Initializes Opik, syncs prompts, and returns the tracer.
     """
     logger.info(f"Initializing Opik for project: {project_name}")
+    
+    # Set global environment variable to ensure all threads/processes use this project
+    os.environ["OPIK_PROJECT_NAME"] = project_name
 
     # Initialize Client
     client = opik.Opik(project_name=project_name)
@@ -37,4 +40,4 @@ def configure_opik(project_name="agents-roleplay"):
         except Exception as e:
             logger.error(f"Failed to sync prompt {name}: {e}")
 
-    return OpikTracer(project_name="agents-roleplay", tags=[""])
+    return OpikTracer(project_name="agents-roleplay", tags=["judge", "judge-role-play"])

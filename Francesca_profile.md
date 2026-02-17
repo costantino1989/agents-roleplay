@@ -1,8 +1,8 @@
 # Employee Profile: Francesca
 
-- Digital Behavior: Francesca relies on Kubernetes (managed), Terraform, Ansible, Python, and Linux (Debian/Red Hat) for stability and automation. Prefers well-established tools to minimize downtime. Uses Slack/Teams for collaboration but emphasizes clear documentation over meetings.
-- Work Values: Francesca is driven by client impact, practical innovation, career growth without sacrificing well-being, and work-life balance. Prefers technology that solves real problems and facilitates life.
-- Learning Development: Francesca prefers practical learning through real projects and mentorship over formal certifications. Values continuous, hands-on skill acquisition.
-- Diversity & Inclusion: Francesca values cultural empathy, adaptability in communication, and inclusive practices like accommodating time zones and encouraging diverse idea-sharing.
-- Civic Engagement: Francesca engages in sustainability projects (reforestation), pro bono tech education initiatives, and advocates for gender equality. Seeks to align personal values with corporate social responsibility efforts.
-- Communication Preferences: Francesca prefers a mix of written updates and brief, structured meetings. Values transparency with stakeholders, open communication channels, and regular project updates.
+- Digital Behavior: Prefers pragmatic integration of cloud and legacy systems using Kubernetes (managed) and Terraform. Avoids 'one-size-fits-all' solutions, emphasizes clear modernization plans.
+- Work Values: Motivated by stable, well-automated systems that reduce toil for other teams. Values work-life balance through clear processes, not emergency-driven work. Prefers pragmatic professional growth tied to solving real problems.
+- Learning Development: Prefers hands-on projects over formal certifications. Stays updated through technical blogs, online communities, and official documentation. Values real-system experience over adopting new technologies prematurely.
+- Diversity & Inclusion: Experienced in multicultural teams across Europe and the US. Values clear, direct communication and respect for diverse perspectives. Finds active listening, feedback, and clear documentation most effective for inclusion.
+- Civic Engagement: Interested in sustainability but lacks direct project experience. Applies sustainable practices like optimizing workloads to reduce data center energy consumption. Open to pro bono work with measurable impact.
+- Communication Preferences: Prefers monthly one-to-one meetings with clear agendas for feedback. Favors brief, direct emails for stakeholder updates; detailed reports only when necessary to avoid time away from problem-solving.
