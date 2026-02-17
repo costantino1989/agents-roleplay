@@ -1,12 +1,10 @@
 import concurrent.futures
 import opik
 import time
-from opik import opik_context
 from state import AgentState
 from typing import Any, Dict, List, Optional
 from utils.llm_client import LLMClient, Message
 from utils.logger import get_logger
-from utils.metrics import answer_relevance_metric
 
 
 class Agent:
@@ -54,15 +52,6 @@ class Agent:
         # 3. Call LLM
         response_msg = self.client.chat(messages, tools=self.tools)
 
-        # Capture trace ID from the main thread context
-        trace_data = opik_context.get_current_trace_data()
-        trace_id = trace_data.id if trace_data else None
-
-        self.logger.debug(f"trace_id: {trace_id}")
-
-        # 4. Calculate Metrics (Async/Parallel)
-        self._calculate_metrics(messages, response_msg, trace_id)
-
         # 5. Log Execution Time
         end_time = time.perf_counter()
         duration = end_time - start_time
@@ -99,39 +88,6 @@ class Agent:
 
         return messages, last_other_msg
 
-    def _calculate_metrics(self, messages: List[Message], response_msg: Message, trace_id: str) -> None:
-        try:
-            # Determine Input (last user message)
-            input_text = ""
-            for msg in reversed(messages):
-                if msg.role == "user":
-                    input_text = msg.content
-                    break
-
-            def calc_relevance(trace_id):
-                if response_msg.content and input_text and trace_id:
-                    try:
-                        score_result = answer_relevance_metric.score(
-                            input=input_text,
-                            output=response_msg.content
-                        )
-                        client = opik.Opik(project_name="agents-roleplay")
-                        client.log_traces_feedback_scores(
-                            scores=[{"id": trace_id, "name": "Answer Relevance", "value": score_result.value}],
-                            project_name="agents-roleplay"
-                        )
-                    except Exception as e:
-                        self.logger.warning(f"Error calculating Answer Relevance: {e}")
-
-            # Fire and forget tasks
-            if trace_id:
-                self.executor.submit(calc_relevance, trace_id)
-            else:
-                self.logger.warning("No active Opik trace found, metrics will not be logged.")
-
-        except Exception as e:
-            self.logger.warning(f"Failed to initiate Opik metrics: {e}")
-
     def _create_state_update(self, response_msg: Message, last_other_msg: Optional[Message]) -> Dict[str, Any]:
         update = {
             "messages": [response_msg],
@@ -148,11 +104,3 @@ class Agent:
             update["employee_messages"] = agent_list_update
 
         return update
-
-    def shutdown(self):
-        """
-        Gracefully shuts down the thread pool executor, waiting for pending tasks to complete.
-        """
-        self.logger.info(f"Shutting down {self.name}Agent executor...")
-        self.executor.shutdown(wait=True)
-        self.logger.info(f"{self.name}Agent executor shut down.")

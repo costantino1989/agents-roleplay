@@ -1,8 +1,8 @@
 # Employee Profile: Luigi
 
-- Digital Behavior: Prefers VS Code, GitHub, Slack, Discord, Trello/Jira; values cross-device synchronization for remote/hybrid work.
-- Work Values: Motivated by client impact, innovative technologies, career growth, and work-life balance; enjoys hands-on learning with tech like Python and React.
-- Learning Development: Prefers a mix of certifications, mentorship, and hands-on projects; values self-paced learning (Udemy/Coursera) and real-world application.
-- Diversity & Inclusion: Values multicultural teams; believes in respect, active listening, and feedback; interested in company DEI initiatives.
-- Civic Engagement: Prioritizes sustainability (clean energy, waste reduction); interested in pro-bono work using tech for social impact; past volunteer experience (beach cleanups, fundraising).
-- Communication Preferences: Prefers regular, constructive feedback; short, focused meetings (daily stand-ups); asynchronous communication (Slack/email); direct yet respectful communication style; adaptable to team norms.
+- digital_behavior: Preferisce VS Code, GitHub, GitHub Actions, Slack e Discord. Setup remoto con laptop, seconda schermata, tastiera meccanica e cuffie.
+- work_values: Motivato da innovazione tecnologica, impatto sui clienti, crescita di carriera e equilibrio tra lavoro e vita privata.
+- learning_development: Preferisce un mix di certificazioni, mentorship e progetti pratici. Interessato a budget per corsi, programmi di mentorship e opportunità di lavoro su progetti reali.
+- diversity_inclusion: Ha esperienza in team multiculturali. Valuta la diversità come un vantaggio e promuove pratiche inclusive come il rispetto, l'apertura e la creazione di un ambiente di lavoro sicuro e accogliente.
+- civic_engagement: Interessato a sostenibilità e impegno sociale. Aperto a progetti pro bono e iniziative di impatto sociale allineate ai propri valori.
+- communication_preferences: Preferisce feedback regolare e costruttivo con check-in settimanali. Preferisce riunioni brevi e focalizzate tramite video call. Per le comunicazioni, preferisce email per informazioni formali e Slack o Discord per comunicazioni informali e veloci. Aperto a domande e chiarimenti in tempo reale.

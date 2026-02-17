@@ -8,8 +8,6 @@ import sys
 import argparse
 import questionary
 
-from agents.employee_agent import employee_agent_instance
-from agents.hr_agent import hr_agent_instance
 from graph import build_graph
 from utils.llm_client import Message
 from utils.logger import get_logger
@@ -81,7 +79,7 @@ def main():
             )
             for p in profiles
         ]
-        
+
         try:
             selected_profile = questionary.select(
                 "Choose an employee profile:",
@@ -94,7 +92,7 @@ def main():
     if not selected_profile:
         if not args.profile and not sys.stdin.isatty():
             logger.warning("No interactive terminal detected. Falling back to random profile.")
-        
+
         if not selected_profile:
             selected_profile = random.choice(profiles)
             logger.info(f"Randomly selected profile: {selected_profile['name']}")
@@ -106,7 +104,8 @@ def main():
     job_role = selected_profile["job_role"]
     language = selected_profile["language"]
 
-    logger.info(f"Starting Simulation for: {name} ({age}, {country}, {generation}) | Job: {job_role} | Agents language: {language}")
+    logger.info(
+        f"Starting Simulation for: {name} ({age}, {country}, {generation}) | Job: {job_role} | Agents language: {language}")
 
     # 3. Initialize State
     initial_state = {
@@ -151,11 +150,6 @@ def main():
 
     logger.info("--- Simulation Completed ---")
     logger.info(f"Profile saved to '{profile_filename}'")
-
-    # Graceful shutdown of agents to ensure metrics are calculated
-    logger.info("Waiting for background metrics calculations...")
-    hr_agent_instance.shutdown()
-    employee_agent_instance.shutdown()
 
 
 if __name__ == "__main__":
