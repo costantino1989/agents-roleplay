@@ -62,13 +62,10 @@ class LLMClient:
             "messages": openai_messages,
             "temperature": 0.8,
             "top_p": 0.98,
-            # "presence_penalty": 0.7,
-            # "frequency_penalty": 0.5
-            # "extra_body": {
-            #     "presencePenalty": 0.7,
-            #     "frequencyPenalty": 0.5,
-            #     "top_p": 0.98,
-            # }
+            "presence_penalty": 0.7,
+            "frequency_penalty": 0.5,
+            "extra_body": {
+            }
         }
 
         if tools:
