@@ -66,7 +66,7 @@ generation.
 
 ### Prerequisites
 
-* Python 3.12+
+* Python >=3.11, <=3.12
 * `uv` (for dependency management)
 
 ### Installation

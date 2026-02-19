@@ -23,9 +23,6 @@ def extract_countries(metadata_list):
     Returns a comma-separated string of countries found.
     """
     found_countries = []
-    # Normalize check to ensure case matching if needed, though list seems capitalized
-    # The json sample shows "Austria", "Belgium" capitalized.
-
     for item in metadata_list:
         if item in EUROPE_COUNTRIES:
             found_countries.append(item)
@@ -36,15 +33,29 @@ def extract_countries(metadata_list):
     return ", ".join(found_countries)
 
 
+def extract_keywords(metadata_list):
+    """
+    Extracts keywords from the metadata list.
+    It assumes that anything in the metadata list that is NOT a European Country is a keyword.
+    """
+    found_keywords = []
+    for item in metadata_list:
+        # Se l'elemento NON è nella lista dei paesi, è una keyword
+        if item not in EUROPE_COUNTRIES:
+            found_keywords.append(" ".join(item.split("_")))
+
+    if not found_keywords:
+        return "None"
+
+    return ", ".join(found_keywords)
+
+
 def create_kb():
     # 1. Initialize Chroma Client
-    # We use a persistent client to save data to disk
     persist_path = "./.chroma_db"
     client = chromadb.PersistentClient(path=persist_path)
 
     # 2. Setup Embedding Function
-    # User requested 'intfloat/multilingual-e5-large'
-    # This requires sentence_transformers to be installed.
     print("Initializing embedding function (intfloat/multilingual-e5-large)...")
     try:
         emb_fn = embedding_functions.SentenceTransformerEmbeddingFunction(
@@ -56,17 +67,15 @@ def create_kb():
         return
 
     # 3. Create or Get Collection
-    # "devi usare la cousine per lo score" -> {"hnsw:space": "cosine"}
     collection_name = "genzelo_kb"
 
-    # Delete if exists to start fresh (optional, but ensures clean state for this script)
     try:
         client.delete_collection(collection_name)
         print(f"Deleted existing collection '{collection_name}'")
     except ValueError:
-        pass  # Collection didn't exist
+        pass
     except NotFoundError:
-        pass  # Collection didn't exist
+        pass
 
     collection = client.create_collection(
         name=collection_name,
@@ -105,9 +114,15 @@ def create_kb():
 
             # Extract info
             countries_str = extract_countries(original_metadata_list)
+            keywords_str = extract_keywords(original_metadata_list)
 
-            # Prepend generation and countries to the document text as requested
-            formatted_doc = f"Generation: {gen_key}\nCountries: {countries_str}\n\n{doc_text}"
+            # Prepend generation, countries AND keywords to the document text
+            formatted_doc = (
+                f"Generation: {gen_key}\n"
+                f"Countries: {countries_str}\n"
+                f"Keywords: {keywords_str}\n\n"
+                f"{doc_text}"
+            )
 
             # Create a unique ID
             unique_id = f"{gen_key}_{idx}"
