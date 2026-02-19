@@ -1,3 +1,8 @@
+import os
+
+# Set global Opik project name before imports to ensure it's picked up by all modules
+os.environ["OPIK_PROJECT_NAME"] = "agents-roleplay"
+
 import random
 import sys
 import argparse
@@ -6,6 +11,7 @@ import questionary
 from graph import build_graph
 from utils.llm_client import Message
 from utils.logger import get_logger
+from utils.opik_setup import configure_opik
 from vector_db.client import GenzeloVectorDB
 
 logger = get_logger("Main")
@@ -13,6 +19,9 @@ logger = get_logger("Main")
 
 def main():
     logger.info("--- Initializing HR Onboarding Simulation ---")
+
+    # Initialize Opik
+    opik_tracer = configure_opik()
 
     # 0. Initialize and Warmup Vector DB
     logger.info("Initializing Vector Knowledge Base...")
@@ -70,7 +79,7 @@ def main():
             )
             for p in profiles
         ]
-        
+
         try:
             selected_profile = questionary.select(
                 "Choose an employee profile:",
@@ -83,7 +92,7 @@ def main():
     if not selected_profile:
         if not args.profile and not sys.stdin.isatty():
             logger.warning("No interactive terminal detected. Falling back to random profile.")
-        
+
         if not selected_profile:
             selected_profile = random.choice(profiles)
             logger.info(f"Randomly selected profile: {selected_profile['name']}")
@@ -95,7 +104,8 @@ def main():
     job_role = selected_profile["job_role"]
     language = selected_profile["language"]
 
-    logger.info(f"Starting Simulation for: {name} ({age}, {country}, {generation}) | Job: {job_role} | Agents language: {language}")
+    logger.info(
+        f"Starting Simulation for: {name} ({age}, {country}, {generation}) | Job: {job_role} | Agents language: {language}")
 
     # 3. Initialize State
     initial_state = {
@@ -124,7 +134,7 @@ def main():
         logger.error(f"Failed to create profile file: {e}")
 
     try:
-        for event in app.stream(initial_state, {"recursion_limit": 50}):
+        for event in app.stream(initial_state, {"recursion_limit": 50, "callbacks": [opik_tracer]}):
             for node_name, node_data in event.items():
                 if "messages" in node_data:
                     last_msg = node_data["messages"][-1]

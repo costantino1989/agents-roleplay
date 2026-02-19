@@ -3,4 +3,4 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-MODEL_NAME = "mistral-small-latest"
+MODEL_NAME = os.getenv("MODEL_NAME", "mistral-small-latest")

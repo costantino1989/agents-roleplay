@@ -1,3 +1,8 @@
 # Employee Profile: Luigi
 
-- digital_behavior: Preferisce VS Code, GitHub Actions, Docker. Usa Slack/ Discord per la comunicazione e Confluence/Notion per la documentazione.
+- digital_behavior: Prefers a mix of specialized tools (Slack for real-time communication, Jira/Trello for task management, GitHub for version control and CI/CD with GitHub Actions).
+- work_values: Motivated by real client impact, working with innovative technologies (Python, TypeScript, React), and professional growth opportunities through continuous learning and mentorship.
+- learning_development: Prefers a mixed approach to skill development (hands-on projects, mentorship from senior colleagues, and relevant certifications like AWS/Azure). Interested in internal training courses or platforms like Udemy/Pluralsight.
+- diversity_inclusion: Has experience working in multicultural teams, values clear and respectful communication, adapts to diverse perspectives. Committed to inclusive practices like open dialogue, respect for cultural differences, and promoting inclusive language. Interested in TechVision's DEI initiatives like affinity groups or targeted mentorship programs.
+- civic_engagement: Interested in socially impactful projects (e.g., developed an app for visually impaired navigation during university). Wants to engage with pro bono opportunities through TechVision, particularly collaborations with non-profits or tech solutions for social issues. Committed to sustainability in daily work practices and interested in TechVision's green initiatives.
+- communication_preferences: Prefers regular, constructive feedback (code reviews, one-on-one sessions). Favors balanced meeting cadence (weekly check-ins kept concise/effective). Values open, transparent communication with stakeholders (clear/professional with clients, collaborative with colleagues/managers). Interested in TechVision's guidelines for stakeholder communication.

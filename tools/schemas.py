@@ -35,7 +35,7 @@ save_employee_info_schema = {
             "properties": {
                 "info": {
                     "type": "string",
-                    "description": "The information to save. Format it clearly (e.g., 'Work Values: Prefers flexibility over high salary')."
+                    "description": "The information to save. MUST BE IN ENGLISH. Format it clearly (e.g., 'Work Values: Prefers flexibility over high salary')."
                 }
             },
             "required": ["info"]

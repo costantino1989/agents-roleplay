@@ -1,10 +1,11 @@
 import inspect
-import json
+import opik
 import os
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from dotenv import load_dotenv
 from openai import OpenAI
-from typing import Any, Dict, List, Optional, Union
+from opik import opik_context
+from typing import Any, Dict, List, Optional
 
 load_dotenv()
 
@@ -49,6 +50,7 @@ class LLMClient:
         )
         self.model = model
 
+    @opik.track
     def chat(self, messages: List[Message], tools: Optional[List[Dict[str, Any]]] = None) -> Message:
         """
         Sends a chat completion request to the LLM.
@@ -61,7 +63,9 @@ class LLMClient:
             "temperature": 0.8,
             "top_p": 0.98,
             "presence_penalty": 0.7,
-            "frequency_penalty": 0.5
+            "frequency_penalty": 0.5,
+            "extra_body": {
+            }
         }
 
         if tools:
@@ -70,14 +74,31 @@ class LLMClient:
             params["parallel_tool_calls"] = True
 
         response = self.client.chat.completions.create(**params)
-        choice = response.choices[0]
-        message = choice.message
 
-        return Message(
-            role=message.role,
-            content=message.content,
-            tool_calls=message.tool_calls
+        # Opik tracking: Manually set provider and model name for cost tracking
+        if response.usage:
+            usage_data = {
+                "prompt_tokens": response.usage.prompt_tokens,
+                "completion_tokens": response.usage.completion_tokens,
+                "total_tokens": response.usage.total_tokens
+            }
+            # Update the current span with usage and model info
+            opik_context.update_current_span(
+                model=self.model,
+                provider="gemini",
+                usage=usage_data
+            )
+
+        choice = response.choices[0]
+        message_obj = choice.message
+
+        message = Message(
+            role=message_obj.role,
+            content=message_obj.content,
+            tool_calls=message_obj.tool_calls
         )
+
+        return message
 
 
 def function_to_schema(func) -> Dict[str, Any]:

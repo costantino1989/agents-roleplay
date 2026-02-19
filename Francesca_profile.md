@@ -1,8 +1,8 @@
 # Employee Profile: Francesca
 
-- Digital Behavior: Francesca relies on Kubernetes (managed), Terraform, Ansible, Python, and Linux (Debian/Red Hat) for stability and automation. Prefers well-established tools to minimize downtime. Uses Slack/Teams for collaboration but emphasizes clear documentation over meetings.
-- Work Values: Francesca is driven by client impact, practical innovation, career growth without sacrificing well-being, and work-life balance. Prefers technology that solves real problems and facilitates life.
-- Learning Development: Francesca prefers practical learning through real projects and mentorship over formal certifications. Values continuous, hands-on skill acquisition.
-- Diversity & Inclusion: Francesca values cultural empathy, adaptability in communication, and inclusive practices like accommodating time zones and encouraging diverse idea-sharing.
-- Civic Engagement: Francesca engages in sustainability projects (reforestation), pro bono tech education initiatives, and advocates for gender equality. Seeks to align personal values with corporate social responsibility efforts.
-- Communication Preferences: Francesca prefers a mix of written updates and brief, structured meetings. Values transparency with stakeholders, open communication channels, and regular project updates.
+- Digital Behavior: Prefers stable, well-documented tools like Kubernetes (managed), Terraform, Ansible, and Python. Values automation to reduce manual work and errors. Avoids "bleeding edge" technologies.
+- Work Values: Prioritizes work-life balance, respects personal boundaries, values technical innovation balanced with stability. Prefers solving real problems over following trends. Career growth is important but not at the expense of economic stability or personal well-being.
+- Learning Development: Prefers hands-on project-based learning over formal certifications. Values mentorship for discussing daily challenges and learning from others' experiences. Focuses on practical problem-solving and process improvement.
+- Diversity & Inclusion: Values multicultural teams for diverse perspectives and innovative solutions. Believes inclusion is key to making everyone feel valued and respected. Advocates for clear anti-discrimination policies and a culture of mutual respect.
+- Civic Engagement: Prioritizes sustainability and social impact. Interested in authentic pro bono projects and CSR initiatives with measurable actions, not just appearances.
+- Communication Preferences: Prefers direct, constructive feedback. Favors frequent brief interactions for operational issues and less frequent but in-depth meetings for complex topics. Values efficiency in communication and specific, fact-based feedback.
