@@ -1,8 +1,8 @@
 # Employee Profile: Francesca
 
-- Digital Behavior: Prefers stable, well-documented tools like Kubernetes (managed), Terraform, Ansible, and Python. Values automation to reduce manual work and errors. Avoids "bleeding edge" technologies.
-- Work Values: Prioritizes work-life balance, respects personal boundaries, values technical innovation balanced with stability. Prefers solving real problems over following trends. Career growth is important but not at the expense of economic stability or personal well-being.
-- Learning Development: Prefers hands-on project-based learning over formal certifications. Values mentorship for discussing daily challenges and learning from others' experiences. Focuses on practical problem-solving and process improvement.
-- Diversity & Inclusion: Values multicultural teams for diverse perspectives and innovative solutions. Believes inclusion is key to making everyone feel valued and respected. Advocates for clear anti-discrimination policies and a culture of mutual respect.
-- Civic Engagement: Prioritizes sustainability and social impact. Interested in authentic pro bono projects and CSR initiatives with measurable actions, not just appearances.
-- Communication Preferences: Prefers direct, constructive feedback. Favors frequent brief interactions for operational issues and less frequent but in-depth meetings for complex topics. Values efficiency in communication and specific, fact-based feedback.
+- Digital Behavior: Prefers stable, scalable tools like Kubernetes (managed), Terraform, Ansible, and Python. Uses Debian/RedHat Linux. Prioritizes automation and reliability over bleeding-edge tech.
+- Work Values: Prioritizes system stability and reliability, practical innovation, client impact with careful planning, work-life balance, transparent communication, economic security.
+- Learning Development: Prefers hands-on project-based learning, informal mentorship, flexible training opportunities, access to technical resources and professional communities.
+- Diversity & Inclusion: Values multicultural teams, adapts communication style to cultural contexts, promotes inclusive environments where all voices are valued.
+- Civic Engagement: Interested in sustainability, has participated in pro-bono tech education projects, seeks to align personal values with professional work (e.g., energy-efficient infrastructure, open-source software).
+- Communication Preferences: Prefers detailed emails for daily feedback and updates, short focused meetings with clear agendas, open and direct communication style, pragmatic approach to discussions.

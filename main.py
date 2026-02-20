@@ -1,11 +1,14 @@
 import os
 
+from utils.custom_model import CustomOpenAICompatibleModel
+
 # Set global Opik project name before imports to ensure it's picked up by all modules
 os.environ["OPIK_PROJECT_NAME"] = "agents-roleplay"
 
 import random
 import sys
 import argparse
+import uuid
 import questionary
 
 from graph import build_graph
@@ -13,6 +16,9 @@ from utils.llm_client import Message
 from utils.logger import get_logger
 from utils.opik_setup import configure_opik
 from vector_db.client import GenzeloVectorDB
+
+from opik.evaluation import evaluate_threads
+from opik.evaluation.metrics import ConversationalCoherenceMetric, UserFrustrationMetric
 
 logger = get_logger("Main")
 
@@ -22,6 +28,11 @@ def main():
 
     # Initialize Opik
     opik_tracer = configure_opik()
+
+    # Generate a unique thread_id for this simulation session
+    # This will group all traces of this conversation into a single thread in Opik
+    thread_id = str(uuid.uuid4())
+    logger.info(f"Session thread_id: {thread_id}")
 
     # 0. Initialize and Warmup Vector DB
     logger.info("Initializing Vector Knowledge Base...")
@@ -55,7 +66,6 @@ def main():
     ]
 
     # 2. Select Profile
-    # Parse command line arguments
     parser = argparse.ArgumentParser(description="HR Onboarding Simulation")
     parser.add_argument("--profile", type=str, help="Name of the profile to use (Luigi or Francesca)")
     args = parser.parse_args()
@@ -134,13 +144,21 @@ def main():
         logger.error(f"Failed to create profile file: {e}")
 
     try:
-        for event in app.stream(initial_state, {"recursion_limit": 50, "callbacks": [opik_tracer]}):
+        for event in app.stream(
+            initial_state,
+            {
+                "recursion_limit": 50,
+                "callbacks": [opik_tracer],
+                # LangGraph reads thread_id from "configurable" — Opik picks this up
+                # automatically to group all traces of this session into a single thread
+                "configurable": {"thread_id": thread_id}
+            }
+        ):
             for node_name, node_data in event.items():
                 if "messages" in node_data:
                     last_msg = node_data["messages"][-1]
                     if isinstance(last_msg, Message):
                         sender_lbl = "HR" if node_name == "hr" else "EMPLOYEE"
-                        # Only print content if it has content (not just tool calls) and not from tool
                         if last_msg.content and last_msg.role != "tool":
                             logger.info(f"[{sender_lbl}]: {last_msg.content}")
     except KeyboardInterrupt:
@@ -150,6 +168,43 @@ def main():
 
     logger.info("--- Simulation Completed ---")
     logger.info(f"Profile saved to '{profile_filename}'")
+
+    # 5. Evaluate the conversation thread just completed
+    logger.info("--- Running Thread Evaluation ---")
+    try:
+        # Flush all pending traces to Opik before evaluating
+        opik_tracer.flush()
+        logger.info("Traces flushed to Opik.")
+
+        # Close the thread via the REST client so it becomes "inactive"
+        # evaluate_threads only processes inactive threads
+        import opik as opik_sdk
+        opik_client = opik_sdk.Opik(project_name="agents-roleplay")
+        opik_client.rest_client.traces.close_trace_thread(
+            thread_id=thread_id,
+            project_name="agents-roleplay"
+        )
+        logger.info(f"Thread '{thread_id}' marked as inactive.")
+
+        custom_model = CustomOpenAICompatibleModel(
+            model_name=os.getenv("OPENROUTER_MODEL_NAME"),
+            api_key=os.getenv("OPENROUTER_API_KEY"),
+            base_url=os.getenv("OPENROUTER_BASE_URL")
+        )
+        results = evaluate_threads(
+            project_name="agents-roleplay",
+            filter_string=f'id = "{thread_id}"',
+            eval_project_name="agents-roleplay-evaluation",
+            metrics=[
+                ConversationalCoherenceMetric(model=custom_model, window_size=40, temperature=0.8),
+                UserFrustrationMetric(model=custom_model, window_size=40, temperature=0.8),
+            ],
+            trace_input_transform=lambda x: x.get("input", ""),
+            trace_output_transform=lambda x: x.get("output", ""),
+        )
+        logger.info(f"Evaluation complete. Results: {results}")
+    except Exception as e:
+        logger.error(f"Thread evaluation failed: {e}")
 
 
 if __name__ == "__main__":
