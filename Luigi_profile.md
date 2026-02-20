@@ -1,8 +1,8 @@
 # Employee Profile: Luigi
 
-- digital_behavior: Prefers a mix of specialized tools (Slack for real-time communication, Jira/Trello for task management, GitHub for version control and CI/CD with GitHub Actions).
-- work_values: Motivated by real client impact, working with innovative technologies (Python, TypeScript, React), and professional growth opportunities through continuous learning and mentorship.
-- learning_development: Prefers a mixed approach to skill development (hands-on projects, mentorship from senior colleagues, and relevant certifications like AWS/Azure). Interested in internal training courses or platforms like Udemy/Pluralsight.
-- diversity_inclusion: Has experience working in multicultural teams, values clear and respectful communication, adapts to diverse perspectives. Committed to inclusive practices like open dialogue, respect for cultural differences, and promoting inclusive language. Interested in TechVision's DEI initiatives like affinity groups or targeted mentorship programs.
-- civic_engagement: Interested in socially impactful projects (e.g., developed an app for visually impaired navigation during university). Wants to engage with pro bono opportunities through TechVision, particularly collaborations with non-profits or tech solutions for social issues. Committed to sustainability in daily work practices and interested in TechVision's green initiatives.
-- communication_preferences: Prefers regular, constructive feedback (code reviews, one-on-one sessions). Favors balanced meeting cadence (weekly check-ins kept concise/effective). Values open, transparent communication with stakeholders (clear/professional with clients, collaborative with colleagues/managers). Interested in TechVision's guidelines for stakeholder communication.
+- Digital Behavior: Prefers VS Code, GitHub Actions, Docker, Kubernetes. Favors asynchronous collaboration tools like Slack or Discord.
+- Work Values: Prefers innovation and career growth. Values impactful projects and work-life balance.
+- Learning Development: Prefers hands-on learning through real projects and mentorship. Values practical experience over formal certifications.
+- Diversity & Inclusion: Experienced in multicultural teams. Values clear communication, respect for cultural differences, and inclusive environments where everyone feels heard and valued.
+- Civic Engagement: Values social and environmental impact. Interested in volunteering, sustainable initiatives, and tech for social good (e.g., teaching coding to schoolchildren).
+- Communication Preferences: Prefers regular, constructive feedback. Favors frequent but short review meetings (bi-weekly). Prefers a mix of email for formal communication and Slack/Teams for immediate updates. Values periodic face-to-face or video call check-ins with stakeholders.
