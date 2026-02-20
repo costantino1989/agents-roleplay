@@ -18,8 +18,7 @@ from utils.opik_setup import configure_opik
 from vector_db.client import GenzeloVectorDB
 
 from opik.evaluation import evaluate_threads
-from opik.evaluation.metrics import ConversationalCoherenceMetric, SessionCompletenessQuality, UserFrustrationMetric, \
-    KnowledgeRetentionMetric
+from opik.evaluation.metrics import ConversationalCoherenceMetric, UserFrustrationMetric
 
 logger = get_logger("Main")
 
