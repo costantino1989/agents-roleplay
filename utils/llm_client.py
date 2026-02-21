@@ -85,7 +85,6 @@ class LLMClient:
             # Update the current span with usage and model info
             opik_context.update_current_span(
                 model=self.model,
-                provider="gemini",
                 usage=usage_data
             )
 
