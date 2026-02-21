@@ -34,7 +34,7 @@ def rag(generation: str, country: str, query: str, client: GenzeloVectorDB = Non
     try:
         results = client.search(
             query_text=query,
-            n_results=5,
+            n_results=6,
             where_document=where_document_filter
         )
 

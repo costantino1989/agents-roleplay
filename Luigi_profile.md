@@ -1,8 +1,8 @@
 # Employee Profile: Luigi
 
-- Digital Behavior: Prefers VS Code, GitHub Actions, Docker, Kubernetes. Favors asynchronous collaboration tools like Slack or Discord.
-- Work Values: Prefers innovation and career growth. Values impactful projects and work-life balance.
-- Learning Development: Prefers hands-on learning through real projects and mentorship. Values practical experience over formal certifications.
-- Diversity & Inclusion: Experienced in multicultural teams. Values clear communication, respect for cultural differences, and inclusive environments where everyone feels heard and valued.
-- Civic Engagement: Values social and environmental impact. Interested in volunteering, sustainable initiatives, and tech for social good (e.g., teaching coding to schoolchildren).
-- Communication Preferences: Prefers regular, constructive feedback. Favors frequent but short review meetings (bi-weekly). Prefers a mix of email for formal communication and Slack/Teams for immediate updates. Values periodic face-to-face or video call check-ins with stakeholders.
+- Digital Behavior: Prefers VS Code, GitHub Actions, Slack, Discord. Flexible remote setup (some office days for team building). Prefers MacBook over Windows.
+- Work Values: Motivated by technological innovation and client impact. Values work-life balance to avoid burnout. Seeks career growth through continuous learning and mentorship.
+- Learning Development: Prefers hands-on learning through projects. Values mentorship, especially in early stages. Interested in using platforms like Udemy/Pluralsight for structured learning. Wants time for personal side projects during work hours.
+- Diversity & Inclusion: Values multicultural teams. Appreciates inclusive practices like affinity groups and cultural awareness training. Interested in TechVision's DEI initiatives and conflict resolution processes.
+- Civic Engagement: Passionate about sustainability. Interested in TechVision's environmental policies (e.g., renewable energy, digital footprint reduction). Wants opportunities for pro-bono tech work (e.g., hackathons for NGOs).
+- Communication Preferences: Prefers frequent, constructive feedback. Daily standups + end-of-sprint reviews (Agile). Asynchronous communication for non-urgent matters. Direct but respectful with stakeholders. Uses tools like Jira/Trello over written reports.
