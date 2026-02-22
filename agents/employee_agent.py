@@ -18,11 +18,10 @@ def employee_agent_node(state: AgentState):
     Wrapper function to execute the Employee Agent logic using the Agent class.
     Compatible with LangGraph node signature.
     """
-    if state.get("name") == "Luigi":
-        employee_agent_instance.system_prompt = LUIGI_SYSTEM_PROMPT
-        employee_agent_instance._formatted_system_prompt = None
-    elif state.get("name") == "Francesca":
-        employee_agent_instance.system_prompt = FRANCESCA_SYSTEM_PROMPT
-        employee_agent_instance._formatted_system_prompt = None
+    # Check if a specific prompt is provided in the state (dynamic profile)
+    employee_prompt = state.get("employee_prompt")
+
+    employee_agent_instance.system_prompt = employee_prompt
+    employee_agent_instance._formatted_system_prompt = None
 
     return employee_agent_instance.run(state)
