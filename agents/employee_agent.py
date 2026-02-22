@@ -1,7 +1,5 @@
 from agents.base_agent import Agent
 from config import MODEL_NAME
-from prompts.francesca_prompt import FRANCESCA_SYSTEM_PROMPT
-from prompts.luigi_prompt import LUIGI_SYSTEM_PROMPT
 from state import AgentState
 
 # Initialize the Employee Agent instance

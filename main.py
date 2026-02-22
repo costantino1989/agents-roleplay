@@ -1,4 +1,5 @@
 import os
+
 from utils.custom_model import CustomOpenAICompatibleModel
 
 # Set global Opik project name before imports to ensure it's picked up by all modules
@@ -134,7 +135,7 @@ def main():
 
     # 4. Run Graph
     app = build_graph(db_client)
-
+    opik_tracer.set_graph(graph=app.get_graph(xray=True))
     # Initialize profile file
     profile_filename = f"{name}_profile.md"
     try:
@@ -148,7 +149,7 @@ def main():
             initial_state,
             {
                 "recursion_limit": 50,
-                "callbacks": [opik_tracer], # [opik_tracer] Disabled due to Pydantic/Opik compatibility issue
+                "callbacks": [opik_tracer],
                 # LangGraph reads thread_id from "configurable" — Opik picks this up
                 # automatically to group all traces of this session into a single thread
                 "configurable": {"thread_id": thread_id}
