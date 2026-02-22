@@ -13,7 +13,7 @@ def should_continue(state: AgentState) -> Literal["tools", "employee", "end"]:
     # If it's HR's turn output (text), check if they said goodbye
     if state["sender"] == "hr":
         text = last_message.content.strip().lower() if last_message.content else ""
-        if text.endswith("goodbye"):
+        if "goodbye" in text:
             # Pass to employee for one last goodbye
             return "employee"
         return "employee"
@@ -22,7 +22,7 @@ def should_continue(state: AgentState) -> Literal["tools", "employee", "end"]:
     if state["sender"] == "employee":
         # Check if this was a goodbye response
         text = last_message.content.strip().lower() if last_message.content else ""
-        if "grazie e arrivederci" in text:
+        if "grazie e arrivederci" in text or "goodbye" in text:
             return "end"
         return "hr"
 
