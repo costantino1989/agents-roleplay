@@ -19,3 +19,4 @@ class AgentState(TypedDict):
     job_role: str
     sender: str
     language: str
+    employee_prompt: str

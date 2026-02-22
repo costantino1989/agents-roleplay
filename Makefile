@@ -9,13 +9,8 @@ install:
 run:
 	uv run main.py
 
-# Run the application with Luigi profile
-run-luigi:
-	uv run main.py --profile Luigi
-
-# Run the application with Francesca profile
-run-francesca:
-	uv run main.py --profile Francesca
+run-build-employee:
+	uv run scripts/build_employee.py
 
 # Clean up cache files
 clean:

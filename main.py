@@ -46,24 +46,23 @@ def main():
         sys.exit(1)
 
     # 1. Define Profiles
-    profiles = [
-        {
-            "name": "Luigi",
-            "age": 23,
-            "country": "Italy",
-            "generation": "genz",
-            "job_role": "Junior Software Engineer",
-            "language": "Italian"
-        },
-        {
-            "name": "Francesca",
-            "age": 45,
-            "country": "Italy",
-            "generation": "millenials",
-            "job_role": "Senior DevOps Engineer",
-            "language": "Italian"
-        }
-    ]
+    profiles = []
+    employee_dir = "employee"
+    if os.path.exists(employee_dir):
+        import json
+        for filename in os.listdir(employee_dir):
+            if filename.endswith(".json"):
+                try:
+                    with open(os.path.join(employee_dir, filename), 'r', encoding='utf-8') as f:
+                        profiles.append(json.load(f))
+                except Exception as e:
+                    logger.error(f"Error loading profile from {filename}: {e}")
+    else:
+        logger.warning(f"Directory '{employee_dir}' not found. No profiles loaded.")
+
+    if not profiles:
+        logger.error("No employee profiles found. Please run 'python scripts/build_employee.py' first.")
+        sys.exit(1)
 
     # 2. Select Profile
     parser = argparse.ArgumentParser(description="HR Onboarding Simulation")
@@ -74,17 +73,17 @@ def main():
 
     # Option A: Command Line Argument
     if args.profile:
-        selected_profile = next((p for p in profiles if p["name"].lower() == args.profile.lower()), None)
+        selected_profile = next((p for p in profiles if p.get("name", "").lower() == args.profile.lower()), None)
         if not selected_profile:
-            logger.error(f"Profile '{args.profile}' not found. Available: {[p['name'] for p in profiles]}")
+            logger.error(f"Profile '{args.profile}' not found. Available: {[p.get('name', 'Unknown') for p in profiles]}")
             sys.exit(1)
-        logger.info(f"Profile selected via argument: {selected_profile['name']}")
+        logger.info(f"Profile selected via argument: {selected_profile.get('name')}")
 
     # Option B: Interactive Selection (if TTY)
     elif sys.stdin.isatty():
         choices = [
             questionary.Choice(
-                title=f"{p['name']} ({p['generation']}, {p['job_role']})",
+                title=f"{p.get('name', 'Unknown')} ({p.get('generation', 'N/A')}, {p.get('job_role', 'N/A')})",
                 value=p
             )
             for p in profiles
@@ -105,14 +104,15 @@ def main():
 
         if not selected_profile:
             selected_profile = random.choice(profiles)
-            logger.info(f"Randomly selected profile: {selected_profile['name']}")
+            logger.info(f"Randomly selected profile: {selected_profile.get('name', 'Unknown')}")
 
-    name = selected_profile["name"]
-    age = selected_profile["age"]
-    country = selected_profile["country"]
-    generation = selected_profile["generation"]
-    job_role = selected_profile["job_role"]
-    language = selected_profile["language"]
+    name = selected_profile.get("name", "Unknown")
+    age = selected_profile.get("age", "Unknown")
+    country = selected_profile.get("country", "Unknown")
+    generation = selected_profile.get("generation", "Unknown")
+    job_role = selected_profile.get("job_role", "Unknown")
+    language = selected_profile.get("language", "English")
+    employee_prompt = selected_profile.get("prompt", "")
 
     logger.info(
         f"Starting Simulation for: {name} ({age}, {country}, {generation}) | Job: {job_role} | Agents language: {language}")
@@ -129,12 +129,13 @@ def main():
         "generation": generation,
         "job_role": job_role,
         "sender": "system",
-        "language": language
+        "language": language,
+        "employee_prompt": employee_prompt
     }
 
     # 4. Run Graph
     app = build_graph(db_client)
-
+    opik_tracer.set_graph(graph=app.get_graph(xray=True))
     # Initialize profile file
     profile_filename = f"{name}_profile.md"
     try:
