@@ -1,4 +1,4 @@
-.PHONY: install run run-luigi run-francesca clean
+.PHONY: install run run-build-employee clean
 
 # Install dependencies using uv and build the knowledge base
 install:
