@@ -3,7 +3,6 @@ import os
 import re
 import sys
 from collections import Counter
-from typing import List, Dict, Any
 
 import questionary
 from openai import OpenAI
@@ -127,6 +126,15 @@ def main():
 
     print(f"\nGenerating prompt using model: {model}...")
 
+    # Get existing employee names
+    employee_dir = "employee"
+    existing_names = []
+    if os.path.exists(employee_dir):
+        for filename in os.listdir(employee_dir):
+            if filename.endswith(".json"):
+                existing_names.append(os.path.splitext(filename)[0])
+    existing_names_str = ", ".join(existing_names)
+
     try:
         response = client.chat.completions.create(
             model=model,
@@ -138,7 +146,8 @@ def main():
                     country=country,
                     language=language,
                     selected_metadata=", ".join(selected_metadata),
-                    documents=documents_str
+                    documents=documents_str,
+                    name=existing_names_str
                 )}
             ],
             temperature=0.8
