@@ -63,6 +63,8 @@ EMPLOYEE_BUILDER_USER_PROMPT = """
 **Country:** {country}
 **Language:** {language}
 **Selected Metadata:** {selected_metadata}
+**Names already in use:** {name}
+
 
 **Source Documents:**
 {documents}
